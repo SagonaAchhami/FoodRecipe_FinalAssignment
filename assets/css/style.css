@@ -1,0 +1,198 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #e6d9ff, #f3ecff);
+    color: #3b2357;
+    min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+nav {
+    background: #6a4bc3;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background: #8b6fe8;
+}
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+h2 {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.container {
+    max-width: 900px;
+    background: #ffffff;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   FORMS
+========================= */
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 14px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #cdb8ff;
+    font-size: 16px;
+    background: #f9f6ff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #7b5bd6;
+    box-shadow: 0 0 6px rgba(123,91,214,0.3);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    background: #6a4bc3;
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #8b6fe8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   TABLES (Dashboard)
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #6a4bc3;
+    color: white;
+    padding: 14px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    background: #f8f4ff;
+}
+
+tr:nth-child(even) td {
+    background: #efe8ff;
+}
+
+td a {
+    color: #6a4bc3;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   SEARCH BAR (AJAX)
+========================= */
+#search {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #cdb8ff;
+    background: #ffffff;
+    margin-bottom: 15px;
+}
+
+#results {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: auto;
+}
+
+#results li {
+    background: #ffffff;
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#results li:hover {
+    background: #efe8ff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    color: #5e3fa6;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+    color: #6a4bc3;
+}
+
+a:hover {
+    color: #8b6fe8;
+}
