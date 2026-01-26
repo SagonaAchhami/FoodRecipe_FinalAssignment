@@ -1,28 +1,32 @@
 <?php
-require_once "../config/db.php";
 require_once "../includes/header.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username=?");
-    $stmt->execute([$_POST['username']]);
-    $user = $stmt->fetch();
+$ADMIN_USER = "sagona";
+$ADMIN_PASS = "anogas"; 
 
-    if ($user && hash('sha256', $_POST['password']) === $user['password']) {
-        $_SESSION['user_id'] = $user['id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (
+        $_POST['username'] === $ADMIN_USER &&
+        $_POST['password'] === $ADMIN_PASS
+    ) {
+        $_SESSION['user_id'] = 1;
+        $_SESSION['is_admin'] = true;
         header("Location: index.php");
         exit;
+    } else {
+        $error = "Invalid admin credentials";
     }
-    echo "Invalid login";
 }
 ?>
 
-<h2>Login</h2>
+<h2>Admin Login</h2>
+
+<?php if(isset($error)) echo "<p style='color:red'>$error</p>"; ?>
+
 <form method="post">
-    Username <input name="username">
-    Password <input type="password" name="password">
+    Username <input name="username" required>
+    Password <input type="password" name="password" required>
     <button>Login</button>
 </form>
-
-<p>New user? <a href="signup.php">Signup here</a></p>
 
 <?php require_once "../includes/footer.php"; ?>

@@ -1,5 +1,5 @@
 <hr>
-<footer>© 2026 Food Recipe Database</footer>
+<footer>© Sagona Achhami</footer>
 <script src="/assets/js/script.js"></script>
 </body>
 </html>

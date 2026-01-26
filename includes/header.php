@@ -18,8 +18,8 @@ require_once __DIR__ . "/functions.php";
     <a href="search.php">Search</a> |
     <a href="logout.php">Logout</a>
 <?php else: ?>
-    <a href="login.php">Login</a> |
-    <a href="signup.php">Signup</a>
+    <a href="login.php">Admin Login</a>
 <?php endif; ?>
+
 </nav>
 <hr>
