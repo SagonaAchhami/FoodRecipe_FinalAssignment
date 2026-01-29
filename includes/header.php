@@ -7,7 +7,6 @@ require_once __DIR__ . "/functions.php";
 <head>
     <title>Food Recipe Database</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-
 </head>
 <body>
 
@@ -20,6 +19,5 @@ require_once __DIR__ . "/functions.php";
 <?php else: ?>
     <a href="login.php">Admin Login</a>
 <?php endif; ?>
-
 </nav>
 <hr>

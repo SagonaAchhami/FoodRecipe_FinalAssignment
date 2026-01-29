@@ -1,30 +1,35 @@
-<?php require_once "../includes/header.php"; ?>
+<?php
+require_once "../includes/header.php";
+?>
 
 <h2>Search Recipes</h2>
 
-<input id="title" placeholder="Search by title"><br><br>
+<div class="container">
+<label for="title">Recipe Title:</label>
+<input id="title" placeholder="Search by title">
 
-<select id="cuisine">
-    <option value="">All Cuisines</option>
-    <option>Italian</option>
-    <option>Indian</option>
-    <option>Chinese</option>
-</select>
+<label for="cuisine">Cuisine:</label>
+<input id="cuisine" placeholder="Search by cuisine">
 
+<label for="difficulty">Difficulty:</label>
 <select id="difficulty">
     <option value="">All Difficulty</option>
-    <option>Easy</option>
-    <option>Medium</option>
-    <option>Hard</option>
+    <option value="Easy">Easy</option>
+    <option value="Medium">Medium</option>
+    <option value="Hard">Hard</option>
 </select>
 
-<br><br>
-
+<label for="ingredient">Ingredient:</label>
 <input id="ingredient" placeholder="Ingredient (autocomplete)">
-<ul id="ingredient-list"></ul>
+<ul id="ingredient-list" style="border:1px solid #ccc;"></ul>
 
 <hr>
 
-<ul id="results"></ul>
+<h3>Results</h3>
+<div id="results"></div>
+</div>
+
+<script src="../assets/js/script.js"></script>
+
 
 <?php require_once "../includes/footer.php"; ?>

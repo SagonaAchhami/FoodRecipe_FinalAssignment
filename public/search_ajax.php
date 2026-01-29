@@ -1,30 +1,30 @@
 <?php
 require_once "../config/db.php";
 
-$title = $_GET['title'] ?? '';
-$cuisine = $_GET['cuisine'] ?? '';
-$difficulty = $_GET['difficulty'] ?? '';
-$ingredient = $_GET['ingredient'] ?? '';
+$title = trim($_GET['title'] ?? '');
+$cuisine = trim($_GET['cuisine'] ?? '');
+$difficulty = trim($_GET['difficulty'] ?? '');
+$ingredient = trim($_GET['ingredient'] ?? '');
 
-$sql = "SELECT title FROM recipes WHERE 1";
+$sql = "SELECT * FROM recipes WHERE 1";
 $params = [];
 
-if ($title) {
+if ($title !== '') {
     $sql .= " AND title LIKE ?";
     $params[] = "%$title%";
 }
 
-if ($cuisine) {
-    $sql .= " AND cuisine = ?";
-    $params[] = $cuisine;
+if ($cuisine !== '') {
+    $sql .= " AND cuisine LIKE ?";
+    $params[] = "%$cuisine%";
 }
 
-if ($difficulty) {
+if ($difficulty !== '') {
     $sql .= " AND difficulty = ?";
     $params[] = $difficulty;
 }
 
-if ($ingredient) {
+if ($ingredient !== '') {
     $sql .= " AND ingredients LIKE ?";
     $params[] = "%$ingredient%";
 }
@@ -32,4 +32,5 @@ if ($ingredient) {
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 
-echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+$recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo json_encode($recipes);

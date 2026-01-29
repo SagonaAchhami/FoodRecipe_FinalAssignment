@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
+
 * {
     box-sizing: border-box;
     font-family: "Segoe UI", Tahoma, sans-serif;
@@ -13,9 +11,6 @@ body {
     min-height: 100vh;
 }
 
-/* =========================
-   NAVBAR
-========================= */
 nav {
     background: #6a4bc3;
     padding: 15px 25px;
@@ -36,9 +31,7 @@ nav a:hover {
     background: #8b6fe8;
 }
 
-/* =========================
-   PAGE CONTAINER
-========================= */
+
 h2 {
     text-align: center;
     margin-top: 25px;
@@ -53,9 +46,6 @@ h2 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
 }
 
-/* =========================
-   FORMS
-========================= */
 form {
     max-width: 600px;
     margin: auto;
@@ -88,9 +78,6 @@ select:focus {
     box-shadow: 0 0 6px rgba(123,91,214,0.3);
 }
 
-/* =========================
-   BUTTONS
-========================= */
 button {
     background: #6a4bc3;
     color: white;
@@ -109,9 +96,7 @@ button:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* =========================
-   TABLES (Dashboard)
-========================= */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -144,9 +129,7 @@ td a:hover {
     text-decoration: underline;
 }
 
-/* =========================
-   SEARCH BAR (AJAX)
-========================= */
+
 #search {
     width: 100%;
     padding: 16px;
@@ -176,9 +159,6 @@ td a:hover {
     background: #efe8ff;
 }
 
-/* =========================
-   FOOTER
-========================= */
 footer {
     text-align: center;
     padding: 15px;
@@ -186,9 +166,6 @@ footer {
     color: #5e3fa6;
 }
 
-/* =========================
-   LINKS
-========================= */
 a {
     color: #6a4bc3;
 }
@@ -196,3 +173,49 @@ a {
 a:hover {
     color: #8b6fe8;
 }
+.recipe-card {
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+.recipe-card h4 {
+    margin: 0 0 5px 0;
+}
+.recipe-card p {
+    margin: 2px 0;
+}
+/* Center forms on page */
+.container, form, #results {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+td a.delete-link {
+    color: #6a4bc3;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+td a.delete-link:hover {
+    text-decoration: underline;
+    color: #8b6fe8;
+}
+
+#results .recipe-card {
+    margin: 15px auto;
+}
+
+input[type="text"], select, textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+

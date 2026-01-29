@@ -2,19 +2,18 @@
 require_once "../includes/header.php";
 
 $ADMIN_USER = "sagona";
-$ADMIN_PASS = "anogas"; 
+$ADMIN_HASH = password_hash("anogas", PASSWORD_DEFAULT);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
         $_POST['username'] === $ADMIN_USER &&
-        $_POST['password'] === $ADMIN_PASS
+        password_verify($_POST['password'], $ADMIN_HASH)
     ) {
         $_SESSION['user_id'] = 1;
-        $_SESSION['is_admin'] = true;
         header("Location: index.php");
         exit;
     } else {
-        $error = "Invalid admin credentials";
+        $error = "Invalid credentials";
     }
 }
 ?>
@@ -24,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php if(isset($error)) echo "<p style='color:red'>$error</p>"; ?>
 
 <form method="post">
-    Username <input name="username" required>
-    Password <input type="password" name="password" required>
-    <button>Login</button>
+Username <input name="username" required><br>
+Password <input type="password" name="password" required>
+<button>Login</button>
 </form>
 
 <?php require_once "../includes/footer.php"; ?>
