@@ -125,6 +125,19 @@ td a {
     text-decoration: none;
 }
 
+table td:first-child,
+table th:first-child {
+    width: 120px; 
+}
+
+
+table td img {
+    width: 100px;  
+    height: auto;   
+    border-radius: 8px; 
+    object-fit: cover;  
+}
+
 td a:hover {
     text-decoration: underline;
 }
@@ -219,3 +232,73 @@ input[type="text"], select, textarea {
     box-sizing: border-box;
 }
 
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background: linear-gradient(135deg, #d6c1ff, #f3ecff); 
+}
+
+.login-box {
+    width: 360px;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 20px; 
+    padding: 40px 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-box h2 {
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #3b2357;
+    letter-spacing: 1px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #cdb8ff;
+    font-size: 16px;
+    background: #f9f6ff;
+    transition: all 0.3s ease;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #7b5bd6;
+    box-shadow: 0 0 8px rgba(123,91,214,0.4);
+}
+
+.login-box button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 12px;
+    font-size: 17px;
+    background: #6a4bc3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-box button:hover {
+    background: #8b6fe8;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.login-box p.error {
+    color: #ff4d4d;
+    margin-bottom: 15px;
+    font-weight: 600;
+}

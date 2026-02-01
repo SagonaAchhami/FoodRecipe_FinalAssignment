@@ -1,4 +1,5 @@
 <?php
+// functions.php (snippet)
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

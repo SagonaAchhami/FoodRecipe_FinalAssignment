@@ -18,14 +18,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h2>Admin Login</h2>
+<div class="login-page">
+    <div class="login-box">
+        <h2>Admin Login</h2>
 
-<?php if(isset($error)) echo "<p style='color:red'>$error</p>"; ?>
+        <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
 
-<form method="post">
-Username <input name="username" required><br>
-Password <input type="password" name="password" required>
-<button>Login</button>
-</form>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
 
 <?php require_once "../includes/footer.php"; ?>

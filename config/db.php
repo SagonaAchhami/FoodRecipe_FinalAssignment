@@ -1,12 +1,12 @@
 <?php
 if ($_SERVER['SERVER_NAME'] === 'localhost') {
-    // Localhost config
+    
     $host = "localhost";
     $user = "root";
     $pass = "";
     $db   = "recipe_db";
 } else {
-    // Server config
+    
     $host = "localhost";
     $user = "np03cs4s250102";
     $pass = "4pOTFRQ1f3";

@@ -15,34 +15,37 @@ function search() {
         .then(res => res.json())
         .then(data => {
             const resultsDiv = document.getElementById("results");
+
             if (data.length === 0) {
                 resultsDiv.innerHTML = "<p>No recipes found.</p>";
                 return;
             }
 
-            resultsDiv.innerHTML = data.map(r => {
-                // ingredients is JSON string, parse it
-                const ings = JSON.parse(r.ingredients || "[]");
-                return `
-                <div class="recipe-card" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-                    <h4>${r.title}</h4>
-                    <p><strong>Cuisine:</strong> ${r.cuisine}</p>
-                    <p><strong>Difficulty:</strong> ${r.difficulty}</p>
-                    <p><strong>Ingredients:</strong> ${ings.join(", ")}</p>
-                    <p><strong>Instructions:</strong> ${r.instructions}</p>
-                </div>
-                `;
-            }).join("");
+          resultsDiv.innerHTML = data.map(r => {
+    const ings = JSON.parse(r.ingredients || "[]");
+
+    const img = r.image
+        ? `<img src="../assets/images/${r.image}" width="120" style="display:block;margin-bottom:8px;">`
+        : "";
+
+    return `
+        <div class="recipe-card" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+            ${img}
+            <h4>${r.title}</h4>
+            <p><strong>Cuisine:</strong> ${r.cuisine}</p>
+            <p><strong>Difficulty:</strong> ${r.difficulty}</p>
+            <p><strong>Ingredients:</strong> ${ings.join(", ")}</p>
+            <p><strong>Instructions:</strong> ${r.instructions}</p>
+        </div>
+    `;
+}).join("");
+
         });
 }
 
+[title, cuisine, difficulty, ingredient].forEach(el => el.addEventListener("input", search));
 
-[title, cuisine, difficulty, ingredient].forEach(el =>
-    el.addEventListener("input", search)
-);
-
-
-ingredient.addEventListener("input", function () {
+ingredient.addEventListener("input", function() {
     if (this.value.length < 2) return;
 
     fetch("ingredient_ajax.php?q=" + this.value)
